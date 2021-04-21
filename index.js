@@ -16,7 +16,7 @@ async function launchPuppeteer(websiteHomepage) {
     const dateText = await navigateWebsite(page);
     console.log(dateText);
   } catch (error) {
-    console.error(error);
+    console.error("Bei der navigation ist etwas schief gelaufen!");
   }
   // await page.screenshot({ path: `./screenshots/${timeNow}.png`, fullPage: true });
   await browser.close();
