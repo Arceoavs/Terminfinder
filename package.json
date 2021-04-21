@@ -1,0 +1,22 @@
+{
+  "name": "reisepass-terminfinder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Ein automatisiertes Terminfindungs-System für das Bürgerbüro Münster Mitte. Es wird eingesetzt, um Termine für Reisepässe und Personalausweise auch kurzfristig zu bekommen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Termin",
+    "Bürgerbüro",
+    "Münster",
+    "Reisepass",
+    "Personalausweis"
+  ],
+  "author": "Arnold Arz",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^8.0.0"
+  }
+}
