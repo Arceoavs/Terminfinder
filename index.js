@@ -1,4 +1,5 @@
 import puppeteer from "puppeteer";
+import { parseDate, sleep } from "./utils.js";
 
 const websiteHomepage = "https://termine.stadt-muenster.de/select2?md=1";
 const timeNow = new Date().getTime();
@@ -55,14 +56,9 @@ async function navigateWebsite(page) {
   await sleep(1000);
   
   const htmlContent = await page.$eval("#ui-id-2", (element) => element.innerHTML);
-  const [htmlGibberish, dateText] = htmlContent.split(":");
-  return dateText;
+  const [htmlGibberish, dateText] = htmlContent.split("den ");
+  const availableDate = parseDate(dateText);
+  return availableDate;
 }
-
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-} 
 
 launchPuppeteer(websiteHomepage);
