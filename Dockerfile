@@ -1,4 +1,4 @@
-FROM  buildkite/puppeteer:latest
+FROM  buildkite/puppeteer:8.0.0
 
 # Create app directory
 WORKDIR /usr/src/app
