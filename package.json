@@ -17,6 +17,7 @@
   "author": "Arnold Arz",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "puppeteer": "^8.0.0"
   }
 }

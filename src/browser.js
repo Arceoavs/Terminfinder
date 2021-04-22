@@ -1,7 +1,6 @@
 import puppeteer from "puppeteer";
 import { parseDate, sleep } from "./utils.js";
 
-const websiteHomepage = "https://termine.stadt-muenster.de/select2?md=1";
 const timeNow = new Date().getTime();
 
 async function launchPuppeteer(websiteHomepage) {
@@ -23,10 +22,11 @@ async function launchPuppeteer(websiteHomepage) {
   });
   await page.goto(websiteHomepage);
   try {
-    const dateText = await navigateWebsite(page);
-    console.log(dateText);
+    const availableDate = await navigateWebsite(page);
+    return availableDate;
   } catch (error) {
     console.error("Bei der navigation ist etwas schief gelaufen!");
+    console.log("Error");
   }
   // await page.screenshot({ path: `./screenshots/${timeNow}.png`, fullPage: true });
   await browser.close();
@@ -61,4 +61,4 @@ async function navigateWebsite(page) {
   return availableDate;
 }
 
-launchPuppeteer(websiteHomepage);
+export { launchPuppeteer };
